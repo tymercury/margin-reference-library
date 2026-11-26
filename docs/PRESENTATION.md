@@ -1,7 +1,7 @@
 # Five-minute presentation
 
 Topic: verifying a database-driven web app with Bruno and Compass.
-Use process slides 10–15 and 19. Show the existing app, collection and database.
+Use process slides 8–14 and 18. Show the existing app, collection and database.
 
 ## 0:00–0:55 — System Architecture
 
@@ -63,3 +63,6 @@ Comparing them makes the full data lifecycle visible and easier to troubleshoot.
 2. Select Production in Bruno and keep parallel execution off.
 3. Rehearse the explanation in your own words and choose one short live action.
 4. Use a clearly labelled test record and remove it afterwards.
+
+
+Updated Chinese rehearsal notes are in PRESENTER-NOTES.md.

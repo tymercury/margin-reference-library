@@ -1,36 +1,28 @@
-# Process document structure
+# Documentation structure
 
-25 slides. Ordered by the project brief; AI approach is stated upfront.
+Current user-edited deck: 22 slides. Corner labels remain removed.
 
-1. Project Essentials
-2. AI Use
-3. Research and Rationale
-4. Data Collection and Test Data
-5. Visual Research
-6. Audience and Use Case Diagram
-7. Feature Specification
-8. Interface Development
-9. Data Model and Schema
-10. System Architecture
-11. Database Storage
-12. Data Access and Credentials
-13. API Testing with Bruno
-14. Schema Validation Tests
-15. Frontend and Database Verification
-16. Schema, Form and Display Iteration
-17. Interface Design Iteration
-18. Update Conflicts and Recovery
-19. Deployment and Verification
-20. AI Use Note
-21. Reflection and Next Steps
-22. Movie Watchlist Exercise (Appendix)
-23. Works Cited (A–I)
-24. Works Cited (L–N)
-25. Works Cited (R–V)
+1. Cover
+2. Research and Rationale
+3. Data Collection and Test Data
+4. Visual Research
+5. Audience and Use Case Diagram
+6. Feature Specification
+7. Interface Development
+8. Data Model and Schema
+9. System Architecture
+10. Database Storage
+11. Data Access and Credentials
+12. API Testing with Bruno
+13. Schema Validation Tests
+14. Frontend and Database Verification
+15. Schema, Form and Display Iteration
+16. Interface Design Iteration
+17. Update Conflicts and Recovery
+18. Deployment and Verification
+19. AI Use Note
+20. Reflection and Next Steps
+21. Appendix - Class Practice
+22. Works Cited
 
-Visual system: one sans-serif family (DM Sans), white background, graphite text,
-neutral grey rules and supporting labels. Fifteen actual screenshots support
-the form, code, database, testing and iteration records.
-
-Five-minute presentation: pages 10–15 and 19. Focus on tracing one reference
-from form to API to Atlas and comparing Bruno with Compass.
+Chinese presentation notes: PRESENTER-NOTES.md. Focus pages 8-12 on schema, architecture, storage, credentials and API verification.
