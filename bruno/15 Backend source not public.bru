@@ -1,0 +1,15 @@
+meta {
+  name: 15 Backend source not public
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/server.js
+  body: none
+  auth: none
+}
+
+tests {
+  test("Server source is not served by the frontend", () => { expect(res.status).to.equal(404); expect(String(res.body)).not.to.include("mongoose.connect"); });
+}

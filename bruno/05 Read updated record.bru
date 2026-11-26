@@ -1,0 +1,15 @@
+meta {
+  name: 05 Read updated record
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/references
+  body: none
+  auth: none
+}
+
+tests {
+  test("Updated content is returned by a new GET", () => { const item=res.body.find(x=>x._id===bru.getVar("referenceId")); expect(res.status).to.equal(200); expect(item.title).to.equal("Bruno verification record edited"); expect(item.__v).to.equal(1); });
+}

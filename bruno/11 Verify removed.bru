@@ -1,0 +1,15 @@
+meta {
+  name: 11 Verify removed
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/api/references
+  body: none
+  auth: none
+}
+
+tests {
+  test("Removed record is absent from the public list", () => { expect(res.status).to.equal(200); expect(res.body.some(x=>x._id===bru.getVar("referenceId"))).to.equal(false); });
+}

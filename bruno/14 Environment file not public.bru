@@ -1,0 +1,15 @@
+meta {
+  name: 14 Environment file not public
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/.env
+  body: none
+  auth: none
+}
+
+tests {
+  test("Environment file is not served", () => { expect(res.status).to.equal(404); expect(String(res.body)).not.to.include("MONGODB_URI="); });
+}

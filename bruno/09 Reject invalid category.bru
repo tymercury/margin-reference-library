@@ -1,0 +1,28 @@
+meta {
+  name: 09 Reject invalid category
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/api/references
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Invalid category",
+    "url": "https://mongoosejs.com/docs/guide.html",
+    "category": "Unknown",
+    "note": "This record must not be saved."
+  }
+}
+
+tests {
+  test("Schema enum rejects unknown discipline", () => { expect(res.status).to.equal(400); });
+}

@@ -1,0 +1,15 @@
+meta {
+  name: 13 Cleanup
+  type: http
+  seq: 13
+}
+
+delete {
+  url: {{baseUrl}}/api/references/{{referenceId}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Test record removed from the visible library", () => { expect(res.status).to.equal(204); });
+}

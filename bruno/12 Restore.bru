@@ -1,0 +1,15 @@
+meta {
+  name: 12 Restore
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{baseUrl}}/api/references/{{referenceId}}/restore
+  body: none
+  auth: none
+}
+
+tests {
+  test("Undo restores the same document", () => { expect(res.status).to.equal(200); expect(res.body._id).to.equal(bru.getVar("referenceId")); expect(res.body.deletedAt).to.equal(null); });
+}

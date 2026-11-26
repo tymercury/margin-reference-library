@@ -1,84 +1,65 @@
-# Five-minute presentation · Margin
+# Five-minute presentation
 
-Use Slides 1–5, then demonstrate the live app. The remaining slides document the
-process for the instructor to read. Practise with the actual interface before class.
+Topic: verifying a database-driven web app with Bruno and Compass.
+Use process slides 10–15 and 19. Show the existing app, collection and database.
 
-## Slide 1 · 0:00–0:35
+## 0:00–0:55 — System Architecture
 
-“Margin is a design reference library. It lets a design student save a source
-with a note about what is useful in it. For this presentation, I want to explain
-how one saved reference moves between the webpage, an API and a database.”
+Margin is a design reference library. Each record contains a source link, a
+design note, a discipline and an optional project. The browser sends JSON to an
+Express API. Mongoose validates the fields and writes the document to Atlas.
+The browser receives JSON back and displays the saved reference.
 
-## Slide 2 · 0:35–1:10
+## 0:55–1:35 — Database Storage
 
-“When I save a reference, the link tells me where the work came from. The note
-records why I wanted to keep it. Margin also stores a discipline and a project,
-so I can return to an example when I need it for an assignment. Research on
-keeping and re-finding web information informed this design hypothesis.”
+The records are stored in MongoDB Atlas, in the margin database and references
+collection. In Compass, I can inspect the fields, the generated ObjectId and the
+timestamps. The query { deletedAt: null } returns the active library records.
 
-## Slide 3 · 1:10–2:00
+## 1:35–2:15 — Data Access and Credentials
 
-“There are three main parts. The browser collects the form. The Express API
-receives the request. Mongoose checks the fields and communicates with MongoDB
-Atlas, where the record is stored. POST creates a record. GET retrieves records.
-That is why the reference can appear again after a full page refresh.”
+The browser calls the API. It does not receive the MongoDB connection string.
+The backend reads MONGODB_URI from its Vercel environment. The database password
+stays there. The references themselves are shared through the public API;
+a private library would also need login and ownership checks.
 
-## Slide 4 · 2:00–2:45
+## 2:15–3:10 — Bruno Testing
 
-“In an earlier classroom movie-list exercise, I entered a wrong year and wanted
-to correct it. That showed a reason to support editing. In Margin, an edit uses
-PUT and the record's MongoDB ID. The title can change while the identity stays
-the same. A version check also rejects an outdated edit.”
+Bruno tests the API independently of the webpage. The collection sends POST,
+GET, PUT and DELETE requests. POST returns 201 and a new ObjectId. A separate
+GET returns the stored record. PUT updates the same ID. DELETE hides it from
+the active list. The run also checks required fields and an outdated edit.
+All sixteen requests and tests passed.
 
-## Slide 5 + live demonstration · 2:45–4:45
+## 3:10–4:10 — Frontend Integration
 
-1. Open https://margin-reference-library.vercel.app
-2. Choose Save a reference.
-3. Enter title “Typography practice”, source https://fonts.google.com/knowledge,
-   discipline Typography, project Presentation demo, and a specific design note.
-4. Save and reload. Explain that GET returns the record from Atlas.
-5. Edit the note, save and reload. Explain that PUT updates the same ID.
-6. Remove it, then choose Undo. Explain that DELETE hides the record and the
-   restore endpoint reverses that action.
+The current webpage was tested through create, reload, edit, remove and Undo.
+The edited record can be found in Compass. Its title changes, while its ObjectId
+stays the same. The version increases so an outdated edit can be rejected.
 
-Keep the demonstration short. Copy the source URL beforehand and prepare one
-sentence for the note. If internet access fails, use documentation Slide 14 and
-the verified screenshots to describe the same sequence.
+## 4:10–5:00 — Verification Summary
 
-## Closing · 4:45–5:00
+These tools answer different questions. The webpage shows whether the interaction
+works. Bruno checks API requests and responses. Compass shows what was stored.
+Comparing them makes the full data lifecycle visible and easier to troubleshoot.
 
-“The connection I want to highlight is between a user action, an HTTP request
-and a stored document. AI helped implement and document the project. I am using
-this example to practise explaining the system behind the page.”
+## Terms to rehearse
 
-## 用中文理解
+| Term | Plain-language explanation |
+| --- | --- |
+| Persistence | 页面关闭或刷新后，数据仍保存在数据库里 |
+| API | 浏览器与后端交换请求和数据的入口 |
+| Schema | 规定一条记录有哪些字段、类型和验证规则 |
+| ObjectId | 数据库记录的唯一身份，编辑内容不会换 ID |
+| Environment variable | 在服务器运行环境中提供配置，连接串不写进前端 |
+| Bruno | 直接测试 API 的请求、状态码和响应内容 |
+| Compass | 查看 Atlas 中实际保存的数据库文档 |
+| __v | 本项目用来检查编辑版本的字段 |
+| deletedAt | 本项目用来标记可恢复删除的字段 |
 
-- 前端是你看得到并操作的网页。
-- API 是网页与数据库沟通的接口。网页提出请求，后端执行并回应。
-- Schema 是一条参考资料需要遵守的数据结构和规则。
-- Atlas 是保存记录的云数据库。页面刷新后再次读取记录。
-- MongoDB _id 是记录的固定身份。修改标题时，系统仍然知道要改哪一条。
-- GET 读取，POST 新增，PUT 修改，DELETE 移除。
-- 撤销移除通过 restore 接口清除 deletedAt，显示同一条记录。
+## Before class
 
-## Likely questions
-
-**Why make the note required?**
-To preserve a specific reason for saving the reference. This is a design choice
-informed by keeping/re-finding research and still needs evaluation with users.
-
-**Why MongoDB?**
-It matches the course examples and the existing Atlas setup. One reference maps
-to one document with simple fields.
-
-**Can other visitors see the same data?**
-Yes. This is a shared classroom demo. Individual account separation is future work.
-
-**Did you build it with AI?**
-Yes. Codex assisted research, design, implementation, sample notes and testing.
-The process document describes the contributions and decisions.
-
-**Why did the interface change?**
-The first version gave too much space to slogans and decorative category artwork.
-Student feedback led to a source-and-note list: each row exposes the original
-link, the saved observation and its project. No source preview is fabricated.
+1. Open the website, Bruno collection and Compass margin.references.
+2. Select Production in Bruno and keep parallel execution off.
+3. Rehearse the explanation in your own words and choose one short live action.
+4. Use a clearly labelled test record and remove it afterwards.

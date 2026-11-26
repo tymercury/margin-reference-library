@@ -56,3 +56,16 @@ edit, reload, remove and undo. Production checks passed create, reload, edit
 and removal through the deployed API. A 390px viewport had no horizontal
 page overflow. Schema and HTTP checks covered invalid data and stale edits.
 The eight visible reference notes are AI-authored demonstration content.
+
+
+## API verification
+
+Open `bruno/` in Bruno, select Production, and run the 16 sequential requests.
+The collection verifies CRUD, persistence, schema validation, conflict handling,
+Undo and the server credential boundary. Reports and actual screenshots are in
+`docs/evidence/`. See `docs/WEEK09-REVIEW.md` for the course mapping and
+`docs/WORKS-CITED.md` for MLA 9 references.
+
+Storage: MongoDB Atlas → Cluster0 → database `margin` → collection `references`.
+The server reads `MONGODB_URI` from its environment; the frontend never receives
+that credential. This demo intentionally shares its reference data through the API.

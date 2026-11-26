@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Margin API Verification",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

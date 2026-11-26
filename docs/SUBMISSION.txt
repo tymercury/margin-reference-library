@@ -13,8 +13,9 @@ https://github.com/tymercury/margin-reference-library
 Process documentation and presentation
 https://www.figma.com/slides/nXw7QJEAs21yng712GAOec
 
-Documentation PDF contains 23 slides.
-Slides 1–5 support a five-minute presentation and include speaker notes.
+Documentation PDF contains 25 slides, ordered by the project brief.
+Slides 10–15 and 19 support a five-minute technical presentation with speaker notes.
+Bruno collection: bruno/. Test reports and screenshots: docs/evidence/.
 The movie watchlist classroom exercise is documented in the appendix.
 
 Functionality

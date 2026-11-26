@@ -1,0 +1,28 @@
+meta {
+  name: 08 Reject unsafe URL
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/api/references
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Invalid URL",
+    "url": "javascript:alert(1)",
+    "category": "UI & Web",
+    "note": "This record must not be saved."
+  }
+}
+
+tests {
+  test("Server rejects non-HTTP URL", () => { expect(res.status).to.equal(400); });
+}

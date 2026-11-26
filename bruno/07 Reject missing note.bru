@@ -1,0 +1,27 @@
+meta {
+  name: 07 Reject missing note
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/references
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Invalid incomplete reference",
+    "url": "https://mongoosejs.com/docs/guide.html",
+    "category": "UI & Web"
+  }
+}
+
+tests {
+  test("Server rejects missing required design note", () => { expect(res.status).to.equal(400); expect(res.body.error).to.be.a("string"); });
+}

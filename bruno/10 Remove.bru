@@ -1,0 +1,15 @@
+meta {
+  name: 10 Remove
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{baseUrl}}/api/references/{{referenceId}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Remove returns 204", () => { expect(res.status).to.equal(204); });
+}

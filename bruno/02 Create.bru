@@ -1,0 +1,31 @@
+meta {
+  name: 02 Create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/references
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Bruno verification record",
+    "url": "https://mongoosejs.com/docs/guide.html",
+    "category": "UI & Web",
+    "project": "API Verification",
+    "note": "A schema connects form fields with the structure stored in Atlas."
+  }
+}
+
+tests {
+  test("Create returns 201 and an ObjectId", () => { expect(res.status).to.equal(201); expect(res.body._id).to.match(/^[a-f0-9]{24}$/); expect(res.body.title).to.equal("Bruno verification record"); });
+  bru.setVar("referenceId", res.body._id);
+  bru.setVar("version", res.body.__v);
+}

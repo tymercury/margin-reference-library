@@ -1,0 +1,29 @@
+meta {
+  name: 06 Reject stale edit
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/api/references/{{referenceId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Outdated edit",
+    "url": "https://mongoosejs.com/docs/guide.html",
+    "category": "UI & Web",
+    "note": "This stale request must not overwrite newer content.",
+    "__v": 0
+  }
+}
+
+tests {
+  test("Stale version rejected with 409", () => { expect(res.status).to.equal(409); expect(res.body.error).to.include("Reload"); });
+}

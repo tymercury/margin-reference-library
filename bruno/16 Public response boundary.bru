@@ -1,0 +1,15 @@
+meta {
+  name: 16 Public response boundary
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseUrl}}/api/references
+  body: none
+  auth: none
+}
+
+tests {
+  test("API exposes reference data, not connection credentials", () => { expect(res.status).to.equal(200); const raw=JSON.stringify(res.body); expect(raw).not.to.include("mongodb+srv://"); expect(raw).not.to.include("MONGODB_URI"); expect(raw).not.to.include("password"); });
+}

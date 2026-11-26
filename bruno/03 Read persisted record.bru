@@ -1,0 +1,15 @@
+meta {
+  name: 03 Read persisted record
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/references
+  body: none
+  auth: none
+}
+
+tests {
+  test("A separate GET returns the created record", () => { expect(res.status).to.equal(200); const item=res.body.find(x=>x._id===bru.getVar("referenceId")); expect(item).to.exist; expect(item.note).to.include("schema"); });
+}

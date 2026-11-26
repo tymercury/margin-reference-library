@@ -1,31 +1,36 @@
-# Documentation slide plan
+# Process document structure
 
-The first five slides support the five-minute presentation. Remaining slides are
-process documentation for reading, with the classroom activity in the appendix.
+25 slides. Ordered by the project brief; AI approach is stated upfront.
 
-1. Margin cover. Dark green, oversized serif wordmark on left, stacked reference motifs on right.
-2. Re-finding problem. Light, one large question with a small source/context panel.
-3. One reference through the system. Horizontal browser/API/database flow, dark field beneath for HTTP methods.
-4. Editing needs identity. Before/after reference and stable ID bridge, peach highlight.
-5. Five-minute live demo. Left demo sequence, right compact field-to-document example.
-6. Research rationale. Large research premise at left, project inference at right, source footnote.
-7. Precedent analysis. Are.na and Raindrop stacked comparisons with decisions in a bottom band.
-8. Audience and task. One scenario timeline with need/capability mapping below.
-9. UML use case. Student actor outside system boundary, five associated user goals inside.
-10. Feature specification. Five aligned rows matching goals, UI and HTTP operations.
-11. Data model. Type/requirement table, one separate note about server-managed fields.
-12. System architecture. Native form, browser JS, Express, Mongoose and Atlas compartments with labelled connections.
-13. Feedback iteration. Single-font interface, neutral palette, source-and-note rows and reasons for removing decorative content.
-14. Interface evidence. Annotated running-app screenshot once real data is connected.
-15. Technical problem solving. Wrong-year classroom incident leads to editable records, stable ID and version check.
-16. Validation and recovery. Form messages, server validation and recoverable deletion in a sequential layout.
-17. Test evidence. Actual test outcomes and deployment status, updated after verification.
-18. AI use. Original delegation prompt, attribution of AI work and human choices.
-19. Reflection and learning. Demonstrable concepts and honest next learning steps, no invented student reflection.
-20. Sources. Readable scholarly, product, course and implementation references.
-21. Project essentials. Actual source/public/process links and submission checklist.
-22. Appendix. Movie watchlist exercise, explicitly labelled classroom preparation.
+1. Project Essentials
+2. AI Use
+3. Research and Rationale
+4. Data Collection and Test Data
+5. Visual Research
+6. Audience and Use Case Diagram
+7. Feature Specification
+8. Interface Development
+9. Data Model and Schema
+10. System Architecture
+11. Database Storage
+12. Data Access and Credentials
+13. API Testing with Bruno
+14. Schema Validation Tests
+15. Frontend and Database Verification
+16. Schema, Form and Display Iteration
+17. Interface Design Iteration
+18. Update Conflicts and Recovery
+19. Deployment and Verification
+20. AI Use Note
+21. Reflection and Next Steps
+22. Movie Watchlist Exercise (Appendix)
+23. Works Cited (A–I)
+24. Works Cited (L–N)
+25. Works Cited (R–V)
 
-Deck design preserves the first process presentation; slide 13 documents the revised app system. Original deck roles: Forest #233327, lime #D4F777, paper #F8FAF5,
-muted #637064, peach #EAC5AF. Playfair Display Medium for titles, DM Sans Regular
-for body and DM Sans Medium for labels. A vertical margin rule recurs throughout.
+Visual system: one sans-serif family (DM Sans), white background, graphite text,
+neutral grey rules and supporting labels. Fifteen actual screenshots support
+the form, code, database, testing and iteration records.
+
+Five-minute presentation: pages 10–15 and 19. Focus on tracing one reference
+from form to API to Atlas and comparing Bruno with Compass.

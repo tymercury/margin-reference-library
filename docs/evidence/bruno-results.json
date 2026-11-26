@@ -1,0 +1,1382 @@
+[
+  {
+    "iterationIndex": 0,
+    "results": [
+      {
+        "test": {
+          "filename": "01 Health.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "https://margin-reference-library.vercel.app/api/health",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "age": "0",
+            "cache-control": "no-store",
+            "content-length": "22",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:39 GMT",
+            "etag": "W/\"16-eZzlWKQH8wNgjz2GXvr7VtqeZTc\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::xff48-1795673499044-89365c65f22e"
+          },
+          "data": {
+            "status": "connected"
+          },
+          "url": "https://margin-reference-library.vercel.app/api/health",
+          "responseTime": 236,
+          "duration": 236,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Atlas connection available",
+            "status": "pass",
+            "uid": "7yv182-gAL01kpGtgoXvT"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.368747625,
+        "name": "01 Health",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/01 Health",
+        "path": "01 Health",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "02 Create.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Content-Length": "231",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"title\": \"Bruno verification record\",\n  \"url\": \"https://mongoosejs.com/docs/guide.html\",\n  \"category\": \"UI & Web\",\n  \"project\": \"API Verification\",\n  \"note\": \"A schema connects form fields with the structure stored in Atlas.\"\n}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "cache-control": "no-store",
+            "content-length": "346",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:39 GMT",
+            "etag": "W/\"15a-YMrzYWCCVRvZKoLPLnd5RelS/mY\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::vrshb-1795673499370-0825e9ccebe9"
+          },
+          "data": {
+            "title": "Bruno verification record",
+            "url": "https://mongoosejs.com/docs/guide.html",
+            "category": "UI & Web",
+            "project": "API Verification",
+            "note": "A schema connects form fields with the structure stored in Atlas.",
+            "deletedAt": null,
+            "_id": "6b07cd9b52efb6297b0c8750",
+            "createdAt": "2026-11-26T06:11:39.400Z",
+            "updatedAt": "2026-11-26T06:11:39.400Z",
+            "__v": 0
+          },
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 164,
+          "duration": 164,
+          "size": 346
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Create returns 201 and an ObjectId",
+            "status": "pass",
+            "uid": "KGZsbgfv0YL7LbhGGNH6h"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.226900667,
+        "name": "02 Create",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/02 Create",
+        "path": "02 Create",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "03 Read persisted record.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "age": "0",
+            "cache-control": "no-store",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:39 GMT",
+            "etag": "W/\"e6d-UUX6ka965kiHY2NWZVWAmdfwINg\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::zhvh7-1795673499598-6f9052be2692",
+            "transfer-encoding": "chunked"
+          },
+          "data": [
+            {
+              "_id": "6b07cd9b52efb6297b0c8750",
+              "title": "Bruno verification record",
+              "url": "https://mongoosejs.com/docs/guide.html",
+              "category": "UI & Web",
+              "project": "API Verification",
+              "note": "A schema connects form fields with the structure stored in Atlas.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T06:11:39.400Z",
+              "updatedAt": "2026-11-26T06:11:39.400Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d2",
+              "title": "Packaging design collection",
+              "url": "https://www.cooperhewitt.org/",
+              "category": "Packaging",
+              "project": "Packaging Study",
+              "note": "Collect examples of how type and material communicate a product category. Write down the detail to investigate before using it in a concept.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.425Z",
+              "updatedAt": "2026-11-26T02:22:47.425Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d1",
+              "title": "Accessible form feedback",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "Connect a field to its help text and error message. The relationship should work for assistive technology as well as for sighted readers.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.391Z",
+              "updatedAt": "2026-11-26T02:22:47.391Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d0",
+              "title": "Material motion principles",
+              "url": "https://m3.material.io/styles/motion/overview",
+              "category": "Motion",
+              "project": "Interaction Study",
+              "note": "Use motion to explain a state change and preserve orientation. Respect reduced-motion preferences in the interface.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.355Z",
+              "updatedAt": "2026-11-26T02:22:47.355Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cf",
+              "title": "Pentagram projects",
+              "url": "https://www.pentagram.com/work",
+              "category": "Branding",
+              "project": "Visual Identity",
+              "note": "Look at how identity systems extend across different formats. Record a specific visual relationship before developing a new direction.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.323Z",
+              "updatedAt": "2026-11-26T02:22:47.323Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597ce",
+              "title": "Cooper Hewitt collection",
+              "url": "https://collection.cooperhewitt.org/",
+              "category": "Editorial",
+              "project": "Exhibition Research",
+              "note": "Study how object titles, dates and descriptive metadata work together. A consistent hierarchy helps visitors compare very different objects.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.292Z",
+              "updatedAt": "2026-11-26T02:22:47.292Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cd",
+              "title": "Raindrop bookmark collections",
+              "url": "https://help.raindrop.io/collections",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "A persistent sidebar gives collections a predictable place. Keep the active filter visible while scanning saved references.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.259Z",
+              "updatedAt": "2026-11-26T02:22:47.259Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cc",
+              "title": "Are.na channels",
+              "url": "https://help.are.na/docs/getting-started/channels",
+              "category": "Branding",
+              "project": "Reference Library",
+              "note": "Collections can create context around individual sources. Use a clear project label so the reason for grouping stays visible.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.227Z",
+              "updatedAt": "2026-11-26T02:22:47.227Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cb",
+              "title": "Google Fonts Knowledge",
+              "url": "https://fonts.google.com/knowledge",
+              "category": "Typography",
+              "project": "Visual Identity",
+              "note": "Compare type families by their anatomy and intended use. Keep the reading rhythm consistent across headings and supporting text.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.185Z",
+              "updatedAt": "2026-11-26T02:22:47.185Z",
+              "__v": 0
+            }
+          ],
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 176,
+          "duration": 176,
+          "size": 3693
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "A separate GET returns the created record",
+            "status": "pass",
+            "uid": "EQJCMAFWM8JpDZiqyBQL-"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.240226791,
+        "name": "03 Read persisted record",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/03 Read persisted record",
+        "path": "03 Read persisted record",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "04 Update.bru"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Content-Length": "253",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"title\": \"Bruno verification record edited\",\n  \"url\": \"https://mongoosejs.com/docs/guide.html\",\n  \"category\": \"UI & Web\",\n  \"project\": \"API Verification\",\n  \"note\": \"Updated observation: the same ObjectId identifies the edited record.\",\n  \"__v\": 0\n}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "cache-control": "no-store",
+            "content-length": "356",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:39 GMT",
+            "etag": "W/\"164-iTWft4RPwcas2AjCbFCzfWvsjhA\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::f2bd8-1795673499839-7d5b94be0aff"
+          },
+          "data": {
+            "_id": "6b07cd9b52efb6297b0c8750",
+            "title": "Bruno verification record edited",
+            "url": "https://mongoosejs.com/docs/guide.html",
+            "category": "UI & Web",
+            "project": "API Verification",
+            "note": "Updated observation: the same ObjectId identifies the edited record.",
+            "deletedAt": null,
+            "createdAt": "2026-11-26T06:11:39.400Z",
+            "updatedAt": "2026-11-26T06:11:39.885Z",
+            "__v": 1
+          },
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "responseTime": 198,
+          "duration": 198,
+          "size": 356
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Update keeps identity and increments version",
+            "status": "pass",
+            "uid": "zenRbJyx4VtZMhr2w5_fP"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.260326167,
+        "name": "04 Update",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/04 Update",
+        "path": "04 Update",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "05 Read updated record.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "age": "0",
+            "cache-control": "no-store",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:40 GMT",
+            "etag": "W/\"e77-Up3EGP9xyMV08o132KHIfxX0y1A\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::hwwx2-1795673500098-014bc877c53e",
+            "transfer-encoding": "chunked"
+          },
+          "data": [
+            {
+              "_id": "6b07cd9b52efb6297b0c8750",
+              "title": "Bruno verification record edited",
+              "url": "https://mongoosejs.com/docs/guide.html",
+              "category": "UI & Web",
+              "project": "API Verification",
+              "note": "Updated observation: the same ObjectId identifies the edited record.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T06:11:39.400Z",
+              "updatedAt": "2026-11-26T06:11:39.885Z",
+              "__v": 1
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d2",
+              "title": "Packaging design collection",
+              "url": "https://www.cooperhewitt.org/",
+              "category": "Packaging",
+              "project": "Packaging Study",
+              "note": "Collect examples of how type and material communicate a product category. Write down the detail to investigate before using it in a concept.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.425Z",
+              "updatedAt": "2026-11-26T02:22:47.425Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d1",
+              "title": "Accessible form feedback",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "Connect a field to its help text and error message. The relationship should work for assistive technology as well as for sighted readers.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.391Z",
+              "updatedAt": "2026-11-26T02:22:47.391Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d0",
+              "title": "Material motion principles",
+              "url": "https://m3.material.io/styles/motion/overview",
+              "category": "Motion",
+              "project": "Interaction Study",
+              "note": "Use motion to explain a state change and preserve orientation. Respect reduced-motion preferences in the interface.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.355Z",
+              "updatedAt": "2026-11-26T02:22:47.355Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cf",
+              "title": "Pentagram projects",
+              "url": "https://www.pentagram.com/work",
+              "category": "Branding",
+              "project": "Visual Identity",
+              "note": "Look at how identity systems extend across different formats. Record a specific visual relationship before developing a new direction.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.323Z",
+              "updatedAt": "2026-11-26T02:22:47.323Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597ce",
+              "title": "Cooper Hewitt collection",
+              "url": "https://collection.cooperhewitt.org/",
+              "category": "Editorial",
+              "project": "Exhibition Research",
+              "note": "Study how object titles, dates and descriptive metadata work together. A consistent hierarchy helps visitors compare very different objects.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.292Z",
+              "updatedAt": "2026-11-26T02:22:47.292Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cd",
+              "title": "Raindrop bookmark collections",
+              "url": "https://help.raindrop.io/collections",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "A persistent sidebar gives collections a predictable place. Keep the active filter visible while scanning saved references.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.259Z",
+              "updatedAt": "2026-11-26T02:22:47.259Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cc",
+              "title": "Are.na channels",
+              "url": "https://help.are.na/docs/getting-started/channels",
+              "category": "Branding",
+              "project": "Reference Library",
+              "note": "Collections can create context around individual sources. Use a clear project label so the reason for grouping stays visible.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.227Z",
+              "updatedAt": "2026-11-26T02:22:47.227Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cb",
+              "title": "Google Fonts Knowledge",
+              "url": "https://fonts.google.com/knowledge",
+              "category": "Typography",
+              "project": "Visual Identity",
+              "note": "Compare type families by their anatomy and intended use. Keep the reading rhythm consistent across headings and supporting text.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.185Z",
+              "updatedAt": "2026-11-26T02:22:47.185Z",
+              "__v": 0
+            }
+          ],
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 162,
+          "duration": 162,
+          "size": 3703
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Updated content is returned by a new GET",
+            "status": "pass",
+            "uid": "XISkbGEWMOXAJIz9mu7WR"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.2206505,
+        "name": "05 Read updated record",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/05 Read updated record",
+        "path": "05 Read updated record",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "06 Reject stale edit.bru"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Content-Length": "185",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"title\": \"Outdated edit\",\n  \"url\": \"https://mongoosejs.com/docs/guide.html\",\n  \"category\": \"UI & Web\",\n  \"note\": \"This stale request must not overwrite newer content.\",\n  \"__v\": 0\n}"
+        },
+        "response": {
+          "status": 409,
+          "statusText": "Conflict",
+          "headers": {
+            "cache-control": "no-store",
+            "content-length": "91",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:40 GMT",
+            "etag": "W/\"5b-jpqj/VwdnbjDDl156GeA1p4Yyrs\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::f2bd8-1795673500318-0232b3befcd0"
+          },
+          "data": {
+            "error": "This reference changed or was removed. Reload the library before editing again."
+          },
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "responseTime": 160,
+          "duration": 160,
+          "size": 91
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Stale version rejected with 409",
+            "status": "pass",
+            "uid": "wUAJRF08FW1iIl0I2YK2l"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.22256675,
+        "name": "06 Reject stale edit",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/06 Reject stale edit",
+        "path": "06 Reject stale edit",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "07 Reject missing note.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Content-Length": "122",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"title\": \"Invalid incomplete reference\",\n  \"url\": \"https://mongoosejs.com/docs/guide.html\",\n  \"category\": \"UI & Web\"\n}"
+        },
+        "response": {
+          "status": 400,
+          "statusText": "Bad Request",
+          "headers": {
+            "cache-control": "no-store",
+            "content-length": "67",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:40 GMT",
+            "etag": "W/\"43-R/R1z6EPmfAUEDKV+nBwApB4F8g\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::w5f66-1795673500541-382a685470c8"
+          },
+          "data": {
+            "error": "Check the title, source link, category and design note."
+          },
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 157,
+          "duration": 157,
+          "size": 67
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Server rejects missing required design note",
+            "status": "pass",
+            "uid": "DZGvRLlSl5IaXsG2gmgBb"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.215903584,
+        "name": "07 Reject missing note",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/07 Reject missing note",
+        "path": "07 Reject missing note",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "08 Reject unsafe URL.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Content-Length": "130",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"title\": \"Invalid URL\",\n  \"url\": \"javascript:alert(1)\",\n  \"category\": \"UI & Web\",\n  \"note\": \"This record must not be saved.\"\n}"
+        },
+        "response": {
+          "status": 400,
+          "statusText": "Bad Request",
+          "headers": {
+            "cache-control": "no-store",
+            "content-length": "67",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:40 GMT",
+            "etag": "W/\"43-R/R1z6EPmfAUEDKV+nBwApB4F8g\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::9plfc-1795673500762-c9a4a62dabdf"
+          },
+          "data": {
+            "error": "Check the title, source link, category and design note."
+          },
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 176,
+          "duration": 176,
+          "size": 67
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Server rejects non-HTTP URL",
+            "status": "pass",
+            "uid": "3KKWggKpWq5grJ649uPBM"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.235435208,
+        "name": "08 Reject unsafe URL",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/08 Reject unsafe URL",
+        "path": "08 Reject unsafe URL",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "09 Reject invalid category.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Content-Length": "153",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"title\": \"Invalid category\",\n  \"url\": \"https://mongoosejs.com/docs/guide.html\",\n  \"category\": \"Unknown\",\n  \"note\": \"This record must not be saved.\"\n}"
+        },
+        "response": {
+          "status": 400,
+          "statusText": "Bad Request",
+          "headers": {
+            "cache-control": "no-store",
+            "content-length": "67",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:41 GMT",
+            "etag": "W/\"43-R/R1z6EPmfAUEDKV+nBwApB4F8g\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::xwtjn-1795673501003-861e610492f9"
+          },
+          "data": {
+            "error": "Check the title, source link, category and design note."
+          },
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 176,
+          "duration": 176,
+          "size": 67
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Schema enum rejects unknown discipline",
+            "status": "pass",
+            "uid": "pI3-q8wgBEUnEUZUlrSHn"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.23522225,
+        "name": "09 Reject invalid category",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/09 Reject invalid category",
+        "path": "09 Reject invalid category",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "10 Remove.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 204,
+          "statusText": "No Content",
+          "headers": {
+            "cache-control": "no-store",
+            "date": "Thu, 26 Nov 2026 06:11:41 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::4f7z9-1795673501226-f525bdad5360"
+          },
+          "data": "",
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "responseTime": 161,
+          "duration": 161,
+          "size": 0
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Remove returns 204",
+            "status": "pass",
+            "uid": "7RWBC8rOiFz_RZFenJMo9"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.219962541,
+        "name": "10 Remove",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/10 Remove",
+        "path": "10 Remove",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "11 Verify removed.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "age": "0",
+            "cache-control": "no-store",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:41 GMT",
+            "etag": "W/\"d12-eMewAEHwEsjfVOk3t5jNSzMjp0M\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::k8z6j-1795673501452-0da76ed22b1b",
+            "transfer-encoding": "chunked"
+          },
+          "data": [
+            {
+              "_id": "6b0797f729fa4247b45597d2",
+              "title": "Packaging design collection",
+              "url": "https://www.cooperhewitt.org/",
+              "category": "Packaging",
+              "project": "Packaging Study",
+              "note": "Collect examples of how type and material communicate a product category. Write down the detail to investigate before using it in a concept.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.425Z",
+              "updatedAt": "2026-11-26T02:22:47.425Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d1",
+              "title": "Accessible form feedback",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "Connect a field to its help text and error message. The relationship should work for assistive technology as well as for sighted readers.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.391Z",
+              "updatedAt": "2026-11-26T02:22:47.391Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d0",
+              "title": "Material motion principles",
+              "url": "https://m3.material.io/styles/motion/overview",
+              "category": "Motion",
+              "project": "Interaction Study",
+              "note": "Use motion to explain a state change and preserve orientation. Respect reduced-motion preferences in the interface.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.355Z",
+              "updatedAt": "2026-11-26T02:22:47.355Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cf",
+              "title": "Pentagram projects",
+              "url": "https://www.pentagram.com/work",
+              "category": "Branding",
+              "project": "Visual Identity",
+              "note": "Look at how identity systems extend across different formats. Record a specific visual relationship before developing a new direction.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.323Z",
+              "updatedAt": "2026-11-26T02:22:47.323Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597ce",
+              "title": "Cooper Hewitt collection",
+              "url": "https://collection.cooperhewitt.org/",
+              "category": "Editorial",
+              "project": "Exhibition Research",
+              "note": "Study how object titles, dates and descriptive metadata work together. A consistent hierarchy helps visitors compare very different objects.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.292Z",
+              "updatedAt": "2026-11-26T02:22:47.292Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cd",
+              "title": "Raindrop bookmark collections",
+              "url": "https://help.raindrop.io/collections",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "A persistent sidebar gives collections a predictable place. Keep the active filter visible while scanning saved references.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.259Z",
+              "updatedAt": "2026-11-26T02:22:47.259Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cc",
+              "title": "Are.na channels",
+              "url": "https://help.are.na/docs/getting-started/channels",
+              "category": "Branding",
+              "project": "Reference Library",
+              "note": "Collections can create context around individual sources. Use a clear project label so the reason for grouping stays visible.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.227Z",
+              "updatedAt": "2026-11-26T02:22:47.227Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cb",
+              "title": "Google Fonts Knowledge",
+              "url": "https://fonts.google.com/knowledge",
+              "category": "Typography",
+              "project": "Visual Identity",
+              "note": "Compare type families by their anatomy and intended use. Keep the reading rhythm consistent across headings and supporting text.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.185Z",
+              "updatedAt": "2026-11-26T02:22:47.185Z",
+              "__v": 0
+            }
+          ],
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 165,
+          "duration": 165,
+          "size": 3346
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Removed record is absent from the public list",
+            "status": "pass",
+            "uid": "j5jVPUokUIVlNFlutkDY0"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.223417625,
+        "name": "11 Verify removed",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/11 Verify removed",
+        "path": "11 Verify removed",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "12 Restore.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750/restore",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "Content-Length": "0",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "cache-control": "no-store",
+            "content-length": "356",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:41 GMT",
+            "etag": "W/\"164-V5faejAO7R0nuaOGBYKyfK3V1YU\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::9plfc-1795673501675-11106b86aa06"
+          },
+          "data": {
+            "_id": "6b07cd9b52efb6297b0c8750",
+            "title": "Bruno verification record edited",
+            "url": "https://mongoosejs.com/docs/guide.html",
+            "category": "UI & Web",
+            "project": "API Verification",
+            "note": "Updated observation: the same ObjectId identifies the edited record.",
+            "deletedAt": null,
+            "createdAt": "2026-11-26T06:11:39.400Z",
+            "updatedAt": "2026-11-26T06:11:41.699Z",
+            "__v": 3
+          },
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750/restore",
+          "responseTime": 166,
+          "duration": 166,
+          "size": 356
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Undo restores the same document",
+            "status": "pass",
+            "uid": "mVsP_8WuT55hYivR5m4nh"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.223626958,
+        "name": "12 Restore",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/12 Restore",
+        "path": "12 Restore",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "13 Cleanup.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 204,
+          "statusText": "No Content",
+          "headers": {
+            "cache-control": "no-store",
+            "date": "Thu, 26 Nov 2026 06:11:41 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::hwwx2-1795673501893-4a102361b6cd"
+          },
+          "data": "",
+          "url": "https://margin-reference-library.vercel.app/api/references/6b07cd9b52efb6297b0c8750",
+          "responseTime": 160,
+          "duration": 160,
+          "size": 0
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Test record removed from the visible library",
+            "status": "pass",
+            "uid": "e78PHNorfzzKqusLBH8nU"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.217375833,
+        "name": "13 Cleanup",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/13 Cleanup",
+        "path": "13 Cleanup",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "14 Environment file not public.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "https://margin-reference-library.vercel.app/.env",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "cache-control": "public, max-age=0, must-revalidate",
+            "content-length": "68",
+            "content-type": "application/json",
+            "date": "Thu, 26 Nov 2026 06:11:42 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-error": "NOT_FOUND",
+            "x-vercel-id": "yul1::29hx5-1795673502116-d51bd51a8173"
+          },
+          "data": {
+            "error": {
+              "code": "404",
+              "message": "The page could not be found"
+            }
+          },
+          "url": "https://margin-reference-library.vercel.app/.env",
+          "responseTime": 132,
+          "duration": 132,
+          "size": 68
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Environment file is not served",
+            "status": "pass",
+            "uid": "zdXL3sr5gT6s5ohRmOInV"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.190202208,
+        "name": "14 Environment file not public",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/14 Environment file not public",
+        "path": "14 Environment file not public",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "15 Backend source not public.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "https://margin-reference-library.vercel.app/server.js",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "cache-control": "public, max-age=0, must-revalidate",
+            "content-length": "68",
+            "content-type": "application/json",
+            "date": "Thu, 26 Nov 2026 06:11:42 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-error": "NOT_FOUND",
+            "x-vercel-id": "yul1::4f7z9-1795673502303-39be68523fa1"
+          },
+          "data": {
+            "error": {
+              "code": "404",
+              "message": "The page could not be found"
+            }
+          },
+          "url": "https://margin-reference-library.vercel.app/server.js",
+          "responseTime": 123,
+          "duration": 123,
+          "size": 68
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Server source is not served by the frontend",
+            "status": "pass",
+            "uid": "uxrN-rdrl0hnkze46W1tH"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.181413875,
+        "name": "15 Backend source not public",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/15 Backend source not public",
+        "path": "15 Backend source not public",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "16 Public response boundary.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.4.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "margin-reference-library.vercel.app",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "age": "0",
+            "cache-control": "no-store",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Thu, 26 Nov 2026 06:11:42 GMT",
+            "etag": "W/\"d12-eMewAEHwEsjfVOk3t5jNSzMjp0M\"",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+            "x-vercel-cache": "MISS",
+            "x-vercel-id": "yul1::iad1::tdr8k-1795673502484-a7ea60f6725e",
+            "transfer-encoding": "chunked"
+          },
+          "data": [
+            {
+              "_id": "6b0797f729fa4247b45597d2",
+              "title": "Packaging design collection",
+              "url": "https://www.cooperhewitt.org/",
+              "category": "Packaging",
+              "project": "Packaging Study",
+              "note": "Collect examples of how type and material communicate a product category. Write down the detail to investigate before using it in a concept.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.425Z",
+              "updatedAt": "2026-11-26T02:22:47.425Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d1",
+              "title": "Accessible form feedback",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "Connect a field to its help text and error message. The relationship should work for assistive technology as well as for sighted readers.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.391Z",
+              "updatedAt": "2026-11-26T02:22:47.391Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597d0",
+              "title": "Material motion principles",
+              "url": "https://m3.material.io/styles/motion/overview",
+              "category": "Motion",
+              "project": "Interaction Study",
+              "note": "Use motion to explain a state change and preserve orientation. Respect reduced-motion preferences in the interface.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.355Z",
+              "updatedAt": "2026-11-26T02:22:47.355Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cf",
+              "title": "Pentagram projects",
+              "url": "https://www.pentagram.com/work",
+              "category": "Branding",
+              "project": "Visual Identity",
+              "note": "Look at how identity systems extend across different formats. Record a specific visual relationship before developing a new direction.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.323Z",
+              "updatedAt": "2026-11-26T02:22:47.323Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597ce",
+              "title": "Cooper Hewitt collection",
+              "url": "https://collection.cooperhewitt.org/",
+              "category": "Editorial",
+              "project": "Exhibition Research",
+              "note": "Study how object titles, dates and descriptive metadata work together. A consistent hierarchy helps visitors compare very different objects.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.292Z",
+              "updatedAt": "2026-11-26T02:22:47.292Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cd",
+              "title": "Raindrop bookmark collections",
+              "url": "https://help.raindrop.io/collections",
+              "category": "UI & Web",
+              "project": "Reference Library",
+              "note": "A persistent sidebar gives collections a predictable place. Keep the active filter visible while scanning saved references.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.259Z",
+              "updatedAt": "2026-11-26T02:22:47.259Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cc",
+              "title": "Are.na channels",
+              "url": "https://help.are.na/docs/getting-started/channels",
+              "category": "Branding",
+              "project": "Reference Library",
+              "note": "Collections can create context around individual sources. Use a clear project label so the reason for grouping stays visible.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.227Z",
+              "updatedAt": "2026-11-26T02:22:47.227Z",
+              "__v": 0
+            },
+            {
+              "_id": "6b0797f729fa4247b45597cb",
+              "title": "Google Fonts Knowledge",
+              "url": "https://fonts.google.com/knowledge",
+              "category": "Typography",
+              "project": "Visual Identity",
+              "note": "Compare type families by their anatomy and intended use. Keep the reading rhythm consistent across headings and supporting text.",
+              "deletedAt": null,
+              "createdAt": "2026-11-26T02:22:47.185Z",
+              "updatedAt": "2026-11-26T02:22:47.185Z",
+              "__v": 0
+            }
+          ],
+          "url": "https://margin-reference-library.vercel.app/api/references",
+          "responseTime": 165,
+          "duration": 165,
+          "size": 3346
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "API exposes reference data, not connection credentials",
+            "status": "pass",
+            "uid": "tF27TQX-ER-lq9k6xGcTW"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.223244291,
+        "name": "16 Public response boundary",
+        "suitename": "/Users/amandatang/Desktop/DESN31927 System Design/Project 2/Margin/bruno/16 Public response boundary",
+        "path": "16 Public response boundary",
+        "iterationIndex": 0
+      }
+    ],
+    "summary": {
+      "totalRequests": 16,
+      "passedRequests": 16,
+      "failedRequests": 0,
+      "errorRequests": 0,
+      "skippedRequests": 0,
+      "skippedByBail": 0,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalTests": 16,
+      "passedTests": 16,
+      "failedTests": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  }
+]

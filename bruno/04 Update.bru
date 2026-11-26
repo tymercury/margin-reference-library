@@ -1,0 +1,30 @@
+meta {
+  name: 04 Update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/api/references/{{referenceId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Bruno verification record edited",
+    "url": "https://mongoosejs.com/docs/guide.html",
+    "category": "UI & Web",
+    "project": "API Verification",
+    "note": "Updated observation: the same ObjectId identifies the edited record.",
+    "__v": 0
+  }
+}
+
+tests {
+  test("Update keeps identity and increments version", () => { expect(res.status).to.equal(200); expect(res.body._id).to.equal(bru.getVar("referenceId")); expect(res.body.title).to.equal("Bruno verification record edited"); expect(res.body.__v).to.equal(1); });
+}
