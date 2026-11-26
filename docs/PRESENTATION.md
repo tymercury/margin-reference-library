@@ -78,5 +78,7 @@ Yes. This is a shared classroom demo. Individual account separation is future wo
 Yes. Codex assisted research, design, implementation, sample notes and testing.
 The process document describes the contributions and decisions.
 
-**What do the graphics show?**
-They represent disciplines. The linked original source is the reference itself.
+**Why did the interface change?**
+The first version gave too much space to slogans and decorative category artwork.
+Student feedback led to a source-and-note list: each row exposes the original
+link, the saved observation and its project. No source preview is fabricated.

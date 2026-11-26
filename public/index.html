@@ -2,34 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A thoughtful home for design references. Save the source, keep your thinking, and find it when you need it.">
-<title>Margin — Your design reference library</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23223224'/%3E%3Cpath d='M16 47V18h8l8 15 8-15h8v29h-8V32l-8 14-8-14v15z' fill='%23d4f777'/%3E%3C/svg%3E">
+<meta name="description" content="Save design references with source links, notes and project context.">
+<title>Margin: Reference library</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232323'/%3E%3Cpath d='M16 47V18h8l8 15 8-15h8v29h-8V32l-8 14-8-14v15z' fill='white'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script>
 </head>
 <body>
-<aside class="sidebar">
-<a class="brand" href="/" aria-label="Margin home"><span class="brand-mark">m</span>margin<span class="brand-dot">.</span></a>
-<p class="side-caption">A LITTLE SPACE FOR<br>YOUR NEXT BIG IDEA.</p>
-<nav aria-label="Library"><p class="nav-label">YOUR WORKSPACE</p><button class="nav-all active" id="all"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>All references<span id="total">0</span></button><p class="nav-label categories-label">BROWSE BY DISCIPLINE</p><div id="categories"></div></nav>
-<div class="side-note"><span class="note-symbol">“</span><p>Good references deserve<br>more than an open tab.</p><span>Keep a note for your future self.</span></div>
-<footer class="sidebar-footer"><span class="avatar">YT</span><div>Yinman's studio<small>Shared classroom demo</small></div></footer>
-</aside>
-<main>
-<header class="topbar"><span>WORKSPACE / <strong>LIBRARY</strong></span><span class="today">DESN31927 · PROJECT 02</span></header>
-<section class="intro"><div><p class="eyebrow">COLLECT WITH INTENTION</p><h1>Your next idea<br>starts in the <em>margin.</em></h1><p class="intro-copy">A home for the work that catches your eye.<br>Save the source. Keep your thinking. Come back inspired.</p></div><div class="intro-art" aria-hidden="true"><div class="art-back">A TYPE<br>OF THINKING</div><div class="art-front"><span>OBSERVE<br>& CONNECT</span><div class="art-orbit"></div><small>IDEAS GROW IN GOOD COMPANY.</small></div><span class="art-label">a collection in progress</span></div></section>
-<section class="collection" aria-labelledby="collection-title"><div class="collection-heading"><div><p class="eyebrow">THE GOOD STUFF, KEPT CLOSE</p><h2 id="collection-title">Your reference shelf <span id="count">0</span></h2></div><button class="primary" id="new"><span aria-hidden="true">+</span> Save a reference</button></div>
-<div class="filters"><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><input id="search" type="search" placeholder="Search titles, notes, projects…" aria-label="Search references"></label><label class="project-filter"><span class="sr-only">Filter by project</span><select id="project-filter"><option value="">All projects</option></select></label><label class="sort-filter"><span class="sr-only">Sort references</span><select id="sort"><option value="newest">Newest first</option><option value="title">Title A–Z</option></select></label></div>
-<div class="filter-summary" id="filter-summary"></div><div id="load-state" role="status">Opening your library…</div><div id="grid" class="grid"></div><div id="empty" hidden><h3>A little room for inspiration.</h3><p>Save your first reference and a thought worth returning to.</p><button class="secondary" id="empty-add">Save a reference</button></div></section>
-<footer class="main-footer"><span>Made for curious minds.</span><span>Margin / A design reference library</span></footer>
+<a class="skip" href="#main">Skip to references</a>
+<header class="app-header"><a class="brand" href="/" aria-label="Margin home">Margin</a><span class="demo-label">Shared classroom library</span></header>
+<main id="main">
+<section class="collection" aria-labelledby="collection-title">
+<div class="collection-heading"><div><h1 id="collection-title">Reference library</h1><p class="library-count"><span id="total">0</span> saved references</p></div><button class="primary" id="new"><span aria-hidden="true">+</span> Save a reference</button></div>
+<div class="filters">
+<label class="search"><span>Search</span><input id="search" type="search" placeholder="Title, note or project" aria-label="Search references"></label>
+<label class="project-filter"><span>Project</span><select id="project-filter"><option value="">All projects</option></select></label>
+<label class="sort-filter"><span>Sort</span><select id="sort"><option value="newest">Newest first</option><option value="title">Title A to Z</option></select></label>
+</div>
+<nav aria-label="Filter by discipline"><button class="active" id="all">All disciplines</button><div id="categories"></div></nav>
+<div class="results-line"><p id="filter-summary" role="status"></p><span><span id="count">0</span> shown</span></div>
+<div id="load-state" role="status">Loading references…</div><button class="secondary" id="retry" hidden>Retry loading</button>
+<div class="list-heading" aria-hidden="true"><span>Source</span><span>Design note</span><span>Organisation</span><span>Actions</span></div>
+<div id="grid" class="grid"></div>
+<div id="empty" hidden><h2>No saved references</h2><p>Save a source link with a design note to start your library.</p><button class="secondary" id="empty-add">Save a reference</button></div>
+<noscript><p>JavaScript is required to load and edit this library. Enable JavaScript, then reload this page.</p></noscript>
+</section>
+<footer class="main-footer">Shared demo: anyone with this link can edit these references.</footer>
 </main>
-<dialog id="editor" aria-labelledby="editor-title"><form id="reference-form" novalidate><div class="dialog-header"><div><p class="eyebrow">LEAVE A NOTE FOR LATER</p><h2 id="editor-title">Save a reference</h2></div><button type="button" class="icon-button" id="close" aria-label="Close form">×</button></div><p class="form-intro">Keep the original source and the detail that made you pause.</p>
-<label>Title <input name="title" aria-label="Title" required maxlength="120" placeholder="What caught your eye?" aria-describedby="title-error"><small class="field-error" id="title-error"></small></label>
-<label>Source link <input name="url" aria-label="Source link" type="url" required maxlength="2000" placeholder="https://…" aria-describedby="url-help url-error"><small id="url-help">Use the original creator's page whenever possible.</small><small class="field-error" id="url-error"></small></label>
+<dialog id="editor" aria-labelledby="editor-title"><form id="reference-form" novalidate><div class="dialog-header"><div><h2 id="editor-title">Save a reference</h2></div><button type="button" class="icon-button" id="close" aria-label="Close form">×</button></div><p class="form-intro">All fields are required except Project.</p>
+<label>Title <input name="title" aria-label="Title" required maxlength="120" placeholder="e.g. Editorial type study" aria-describedby="title-error"><small class="field-error" id="title-error"></small></label>
+<label>Source link <input name="url" aria-label="Source link" type="url" required maxlength="2000" placeholder="https://…" aria-describedby="url-help url-error"><small id="url-help">Use the original creator’s page whenever possible.</small><small class="field-error" id="url-error"></small></label>
 <div class="form-row"><label>Discipline <select name="category" aria-label="Discipline" required aria-describedby="category-error"><option value="">Choose a discipline</option></select><small class="field-error" id="category-error"></small></label><label>Project <span class="optional">optional</span><input name="project" aria-label="Project" maxlength="80" list="projects" placeholder="e.g. Visual Identity" aria-describedby="project-error"><datalist id="projects"></datalist><small class="field-error" id="project-error"></small></label></div>
-<label>Your design note <textarea name="note" aria-label="Your design note" required maxlength="1200" rows="4" placeholder="What works here? How might it inform your own design?" aria-describedby="note-help note-error"></textarea><small id="note-help">Capture a specific detail about type, colour, layout or interaction.</small><small class="field-error" id="note-error"></small></label>
+<label>Design note <textarea name="note" aria-label="Design note" required maxlength="1200" rows="4" placeholder="What works here? How might it inform your own design?" aria-describedby="note-help note-error"></textarea><small id="note-help">Capture a specific detail about type, colour, layout or interaction.</small><small class="field-error" id="note-error"></small></label>
 <p id="form-status" role="alert"></p><div class="dialog-actions"><button type="button" class="secondary" id="cancel">Cancel</button><button type="submit" class="primary" id="save">Save reference</button></div></form></dialog>
 <dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">Remove this reference?</h2><p id="delete-description"></p><p>You can undo this after removing it.</p><div class="dialog-actions"><button class="secondary" id="delete-cancel">Keep reference</button><button class="danger" id="delete-confirm">Remove reference</button></div><p id="delete-status" role="alert"></p></dialog>
 <div class="toast" id="toast" hidden role="status"><span id="toast-message"></span><button id="undo" hidden>Undo</button><button id="toast-close" aria-label="Dismiss notification">×</button></div>
-<template id="card"><article class="card"><div class="card-art" aria-hidden="true"><span class="art-category"></span><span class="art-word"></span><span class="art-detail"></span></div><div class="card-body"><div class="card-meta"><span class="category-pill"></span><span class="card-date"></span></div><h3><a class="source" target="_blank" rel="noopener noreferrer"></a></h3><p class="card-note"></p><div class="card-bottom"><span class="project-tag"></span><div class="card-actions"><button class="edit">Edit</button><button class="remove">Remove</button></div></div></div></article></template>
+<template id="card"><article class="card">
+<div class="source-column"><h2><a class="source" target="_blank" rel="noopener noreferrer"></a></h2><span class="source-domain"></span><span class="card-date"></span></div>
+<p class="card-note"></p>
+<dl class="organisation"><div><dt>Discipline</dt><dd class="category-pill"></dd></div><div><dt>Project</dt><dd class="project-tag"></dd></div></dl>
+<div class="card-actions"><button class="edit">Edit</button><button class="remove">Remove</button></div>
+</article></template>
 </body></html>

@@ -23,7 +23,7 @@ This is a design hypothesis, not a tested finding about design students.
 https://www.microsoft.com/en-us/research/publication/information-behaviour-keeps-found-things-found/
 
 Are.na describes channels as contextual collections and blocks as pieces of content
-that may connect to many channels. Margin adopts a visible collection of source cards.
+that may connect to many channels. Margin adopts visible source and project context.
 One discipline and an optional project keep the initial form short. This limits
 multi-project reuse and is a deliberate first-version tradeoff.
 https://help.are.na/docs/getting-started/channels
@@ -50,7 +50,7 @@ Week 07 introduced Compass queries, connection strings and read-only API endpoin
 Week 08 paired HTML forms with POST, schema and data display using Express/Mongoose.
 Week 09 required GET, POST, PUT, DELETE, front-end integration and architecture diagrams.
 Week 10 demonstrated optional image uploads with Canvas, multipart data and blob storage.
-Margin's first scope uses source links and original category graphics. It does not
+Margin's first scope uses source links and written design notes. It does not
 implement the optional uploaded-image feature.
 
 Course sources reviewed in Teams and Figma:
@@ -65,7 +65,7 @@ https://www.figma.com/board/gWgi8TSlXjIv418TPjRMEv/System-Map---File-Uploads
 | User goal | Frontend | HTTP and backend | Persistent result |
 | --- | --- | --- | --- |
 | Keep a reference | Labelled native form | POST /api/references; schema validation | New document in margin.references |
-| Find a reference | Card shelf, search, discipline/project filters | GET /api/references; client-side filter | Existing records returned after reload |
+| Find a reference | Reference list, search, discipline/project filters | GET /api/references; client-side filter | Existing records returned after reload |
 | Correct an observation | Prefilled edit form | PUT /api/references/:id; version check | Same document updated |
 | Remove a reference | Confirmation dialog | DELETE /api/references/:id | deletedAt set, hidden from library |
 | Recover a removal | Undo notification | POST /api/references/:id/restore | deletedAt cleared |
@@ -85,7 +85,7 @@ https://www.figma.com/board/gWgi8TSlXjIv418TPjRMEv/System-Map---File-Uploads
 | deletedAt | Date or null | Recoverable removal |
 
 Browser → fetch JSON → Express route → Mongoose model → MongoDB Atlas.
-Responses return through the API and render as textContent in card elements.
+Responses return through the API and render as textContent in reference rows.
 The URI exists only on the server. Netlify Functions adapts the same Express app
 used locally. Compass and Atlas Data Explorer inspect the stored documents.
 
@@ -96,7 +96,7 @@ Server schema validation also runs because browser checks can be bypassed.
 Stable ObjectIds identify records even when title or project changes.
 An atomic version condition prevents a stale tab from overwriting a newer edit.
 Recoverable deletion supports undo without recreating a record under a new ID.
-Original category graphics support visual scanning and do not represent source screenshots.
+Category graphics were removed in the feedback iteration because they added no information about the linked source.
 
 ## AI use and evidence
 
@@ -139,3 +139,40 @@ screenshot via the system clipboard. The text node was immediately removed,
 and source files and slide text were scanned for connection strings. The student reset the database password. The hosting helper verified the new
 credentials and redeployed the application because file history may retain the
 removed value.
+
+
+## Interface revision after student feedback
+
+The student rejected the first UI’s oversized hero, isolated italic emphasis,
+repeated slogans, uniformly rounded cards and unrelated category colours.
+The revision treats Margin as a working reference library. No usability study is
+claimed: this is an iteration responding to direct client feedback.
+
+| Problem | Decision | Reason |
+| --- | --- | --- |
+| Hero delayed access to saved work | Start with library heading, count and Save action | Retrieval is the main return-visit task |
+| Decorative graphics looked like previews | Remove fabricated category artwork | The schema stores URLs and notes, not source images |
+| Competing slogans and labels | Delete marketing copy; keep task labels and data | Each visible line should identify a source, explain a control or communicate state |
+| Colour and type competed with content | One system sans stack and neutral tokens | Weight, placement and spacing establish the hierarchy |
+| Notes were hard to compare across cards | Desktop list with source, full note, organisation and actions | The saved observation is the product’s useful content |
+| Desktop columns do not fit phones | Reflow each record into source, note and labelled metadata | Preserve reading order and full text at 390px |
+| Failed load resembled an empty library | Distinct error message with Retry | Failure should not imply that records were lost |
+
+Research: Raindrop’s actual product screenshot presents collections, titles and
+source information together (https://raindrop.io/). Its collection documentation
+supports project-based retrieval (https://help.raindrop.io/collections).
+Are.na’s channel documentation describes context around saved blocks
+(https://help.are.na/docs/getting-started/channels). These informed organisation;
+the row composition is Margin’s response to its own text-and-link data model.
+
+At the student’s request, Codex installed and read Leonxlnx/taste-skill and
+Nutlope/hallmark from their official GitHub repositories. Taste’s plain-language
+copy rules and Hallmark’s app-screen, hierarchy, token, focus and state guidance
+were applied. Marketing-site hero and decorative-theme instructions yield to the
+student’s explicit utility-app direction. No additional UI framework was added.
+https://github.com/Leonxlnx/taste-skill
+https://github.com/Nutlope/hallmark
+
+Taste copy-lint and Hallmark static app checks were run. Browser verification uses
+the approved computer-use browser rather than the skills’ separate headless
+renderer. These checks do not certify visual taste or replace user testing.

@@ -1,8 +1,7 @@
 const $ = selector => document.querySelector(selector);
 const categories = ['Typography', 'Branding', 'Packaging', 'UI & Web', 'Editorial', 'Motion'];
-const colors = [['#e4e9cf','#34422c','Aa'],['#eac5af','#573924','form.'],['#dadce8','#34374f','LESS\n& MORE'],['#d9e8dc','#2d4b42','hello'],['#eddfb9','#544b29','folio'],['#ddcfe8','#4d345c','move']];
 let items = [], discipline = '', editing = null, removing = null, lastRemoved = null;
-let loading = false;
+let loading = false, loadError = false;
 const editor = $('#editor');
 const form = $('#reference-form');
 const toast = $('#toast');
@@ -26,33 +25,26 @@ function render() {
   if ($('#sort').value === 'title') filtered.sort((a, b) => a.title.localeCompare(b.title));
   $('#grid').replaceChildren(...filtered.map(item => {
     const fragment = $('#card').content.cloneNode(true);
-    const index = Math.max(0, categories.indexOf(item.category));
-    const [background, ink, word] = colors[index];
-    const art = fragment.querySelector('.card-art');
-    art.classList.add(`art-${index}`);
-    art.style.setProperty('--art-bg', background); art.style.setProperty('--art-ink', ink);
-    fragment.querySelector('.art-category').textContent = item.category.toUpperCase();
-    fragment.querySelector('.art-word').textContent = word;
-    fragment.querySelector('.art-detail').textContent = 'A THOUGHT WORTH KEEPING';
     fragment.querySelector('.category-pill').textContent = item.category;
-    fragment.querySelector('.card-date').textContent = dateFormat.format(new Date(item.createdAt));
+    fragment.querySelector('.card-date').textContent = `Saved ${dateFormat.format(new Date(item.createdAt))}`;
     const link = fragment.querySelector('.source'); link.textContent = item.title; link.href = item.url;
+    fragment.querySelector('.source-domain').textContent = new URL(item.url).hostname.replace(/^www\./, '');
     fragment.querySelector('.card-note').textContent = item.note;
     fragment.querySelector('.card-note').title = item.note;
     fragment.querySelector('.project-tag').textContent = item.project || 'Unassigned';
     const edit = fragment.querySelector('.edit'); edit.setAttribute('aria-label', `Edit ${item.title}`); edit.onclick = () => openEditor(item);
     const remove = fragment.querySelector('.remove'); remove.setAttribute('aria-label', `Remove ${item.title}`); remove.onclick = () => {
-      removing = item; $('#delete-description').textContent = `“${item.title}” will be removed from your shelf.`; $('#delete-status').textContent = ''; $('#delete-dialog').showModal();
+      removing = item; $('#delete-description').textContent = `“${item.title}” will be removed from the library.`; $('#delete-status').textContent = ''; $('#delete-dialog').showModal();
     };
     return fragment;
   }));
   $('#count').textContent = filtered.length; $('#total').textContent = items.length;
-  $('#empty').hidden = loading || filtered.length > 0;
-  $('#empty h3').textContent = items.length ? 'Nothing on this shelf yet.' : 'A little room for inspiration.';
-  $('#empty p').textContent = items.length ? 'Try another search, project or discipline.' : 'Save your first reference and a thought worth returning to.';
+  $('#empty').hidden = loading || loadError || filtered.length > 0;
+  $('#empty h2').textContent = items.length ? 'No matching references' : 'No saved references';
+  $('#empty p').textContent = items.length ? 'Try another search, project or discipline.' : 'Save a source link with a design note to start your library.';
   $('#empty-add').hidden = items.length > 0;
-  $('#filter-summary').textContent = discipline ? `${discipline} · ${filtered.length} reference${filtered.length === 1 ? '' : 's'}` : '';
-  document.querySelectorAll('nav button').forEach(button => button.classList.toggle('active', button.dataset.category === discipline));
+  $('#filter-summary').textContent = discipline || 'All disciplines';
+  document.querySelectorAll('nav button').forEach(button => { button.classList.toggle('active', button.dataset.category === discipline); button.setAttribute('aria-pressed', String(button.dataset.category === discipline)); });
 }
 function refreshProjects() {
   const selected = $('#project-filter').value;
@@ -62,9 +54,9 @@ function refreshProjects() {
   $('#projects').replaceChildren(...projects.map(p => new Option(p, p)));
 }
 async function load() {
-  loading = true; $('#load-state').hidden = false; $('#load-state').textContent = 'Opening your library…';
+  loading = true; loadError = false; $('#retry').hidden = true; $('#empty').hidden = true; $('#load-state').hidden = false; $('#load-state').textContent = 'Loading references…';
   try { items = await api(); refreshProjects(); $('#load-state').hidden = true; }
-  catch(error) { $('#load-state').textContent = error.message; }
+  catch(error) { loadError = true; $('#load-state').textContent = `Could not load references. ${error.message}`; $('#retry').hidden = false; }
   finally { loading = false; render(); }
 }
 function openEditor(item = null) {
@@ -102,13 +94,13 @@ form.onsubmit = async event => {
     const saved = await api(existing ? `/${existing._id}` : '', { method: existing ? 'PUT' : 'POST', body: JSON.stringify(body) });
     items = existing ? items.map(item => item._id === saved._id ? saved : item) : [saved, ...items];
     discipline = ''; $('#search').value = ''; $('#project-filter').value = ''; refreshProjects(); render();
-    editor.close(); notify(existing ? 'Your changes are saved.' : 'Reference saved to your shelf.');
+    editor.close(); notify(existing ? 'Your changes are saved.' : 'Reference saved to the library.');
   } catch(error) { $('#form-status').textContent = `${error.message} Your form is kept here. Check the library before retrying if the connection dropped.`; }
   finally { $('#save').disabled = false; }
 };
 $('#delete-confirm').onclick = async () => {
   const item = removing; $('#delete-confirm').disabled = true;
-  try { await api(`/${item._id}`, { method: 'DELETE' }); items = items.filter(row => row._id !== item._id); lastRemoved = item; refreshProjects(); render(); $('#delete-dialog').close(); notify('Reference removed from your shelf.', true); }
+  try { await api(`/${item._id}`, { method: 'DELETE' }); items = items.filter(row => row._id !== item._id); lastRemoved = item; refreshProjects(); render(); $('#delete-dialog').close(); notify('Reference removed from the library.', true); }
   catch(error) { $('#delete-status').textContent = error.message; }
   finally { $('#delete-confirm').disabled = false; }
 };
@@ -120,15 +112,15 @@ $('#undo').onclick = async () => {
 };
 $('#all').dataset.category = '';
 $('#all').onclick = () => { discipline = ''; render(); };
-for (const [index, category] of categories.entries()) {
+for (const category of categories) {
   form.elements.category.add(new Option(category, category));
   const button = document.createElement('button'); button.dataset.category = category;
-  const dot = document.createElement('span'); dot.className = 'category-dot'; dot.style.setProperty('--tone', colors[index][1]);
-  button.append(dot, document.createTextNode(category)); button.onclick = () => { discipline = discipline === category ? '' : category; render(); }; $('#categories').append(button);
+  button.textContent = category; button.onclick = () => { discipline = discipline === category ? '' : category; render(); }; $('#categories').append(button);
 }
 $('#new').onclick = $('#empty-add').onclick = () => openEditor();
 $('#close').onclick = $('#cancel').onclick = () => editor.close();
 $('#delete-cancel').onclick = () => $('#delete-dialog').close();
 $('#toast-close').onclick = () => toast.hidden = true;
 $('#search').oninput = $('#project-filter').onchange = $('#sort').onchange = render;
+$('#retry').onclick = load;
 load();

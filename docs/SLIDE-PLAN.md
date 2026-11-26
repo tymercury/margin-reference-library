@@ -15,7 +15,7 @@ process documentation for reading, with the classroom activity in the appendix.
 10. Feature specification. Five aligned rows matching goals, UI and HTTP operations.
 11. Data model. Type/requirement table, one separate note about server-managed fields.
 12. System architecture. Native form, browser JS, Express, Mongoose and Atlas compartments with labelled connections.
-13. Visual and interaction direction. Palette, type specimen, note-led card and rationale.
+13. Feedback iteration. Single-font interface, neutral palette, source-and-note rows and reasons for removing decorative content.
 14. Interface evidence. Annotated running-app screenshot once real data is connected.
 15. Technical problem solving. Wrong-year classroom incident leads to editable records, stable ID and version check.
 16. Validation and recovery. Form messages, server validation and recoverable deletion in a sequential layout.
@@ -26,6 +26,6 @@ process documentation for reading, with the classroom activity in the appendix.
 21. Project essentials. Actual source/public/process links and submission checklist.
 22. Appendix. Movie watchlist exercise, explicitly labelled classroom preparation.
 
-Shared design roles match Margin. Forest #233327, lime #D4F777, paper #F8FAF5,
+Deck design preserves the first process presentation; slide 13 documents the revised app system. Original deck roles: Forest #233327, lime #D4F777, paper #F8FAF5,
 muted #637064, peach #EAC5AF. Playfair Display Medium for titles, DM Sans Regular
 for body and DM Sans Medium for labels. A vertical margin rule recurs throughout.

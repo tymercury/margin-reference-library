@@ -32,8 +32,8 @@ Node 22 is configured. Verify GET, POST, PUT and DELETE after deployment.
 ## Scope and credits
 
 This version is one shared collection with visitor editing. It has no account
-separation. Original category graphics represent disciplines, not screenshots
-of linked works. URLs always lead to original sources.
+separation. Source links and complete design notes are presented in a compact
+reference list. URLs lead to the original sources.
 
 Architecture follows Harold Sikkema's course examples. Implementation and
 process drafts were authored with Codex under the student's direction.
