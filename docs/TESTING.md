@@ -21,3 +21,8 @@ November 25, 2026 · Codex-assisted checks
 These are functional and layout checks performed by the assistant. They do not
 constitute a usability study with design students. QA entries were removed from
 the visible shelf through recoverable deletion after testing.
+
+After the database password was reset, the hosting helper verified the new
+credentials and a new production deployment reached READY. The public health
+endpoint returned connected. The exported PDF has 23 pages and its text scan
+found zero MongoDB connection strings.

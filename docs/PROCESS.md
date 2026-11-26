@@ -136,5 +136,6 @@ hosting account. The Netlify adapter is also retained as a course comparison.
 
 A credential was accidentally pasted into a Figma slide while transferring a
 screenshot via the system clipboard. The text node was immediately removed,
-and source files and slide text were scanned for connection strings. Credential
-rotation is required because file history may retain the removed value.
+and source files and slide text were scanned for connection strings. The student reset the database password. The hosting helper verified the new
+credentials and redeployed the application because file history may retain the
+removed value.

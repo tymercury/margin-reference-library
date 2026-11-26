@@ -1,0 +1,25 @@
+Margin — Design Reference Library
+Yinman Tang
+DESN31927 · System Design: Databases and Dynamic Data
+Project 2 · November 26, 2026
+Individual project
+
+Live website
+https://margin-reference-library.vercel.app
+
+Source code
+https://github.com/tymercury/margin-reference-library
+
+Process documentation and presentation
+https://www.figma.com/slides/nXw7QJEAs21yng712GAOec
+
+Documentation PDF contains 23 slides.
+Slides 1–5 support a five-minute presentation and include speaker notes.
+The movie watchlist classroom exercise is documented in the appendix.
+
+Functionality
+Create, read, edit and remove design references, with undo, search, discipline
+and project filters. Express and Mongoose connect the API to MongoDB Atlas.
+The deployed version uses Vercel. This is a shared classroom demo.
+
+AI assistance is documented in the process record and Slides.
