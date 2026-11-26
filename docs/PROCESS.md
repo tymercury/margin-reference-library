@@ -115,3 +115,26 @@ A five-minute teaching segment can follow one reference through its lifecycle.
 Explain why a database ID matters when correcting a title, then demonstrate creating,
 reloading, editing, removing and restoring a sample record. The core learning goal
 is connecting a UI action to an HTTP method and a persistent database change.
+
+## Verification outcomes · November 25, 2026
+
+Local browser tests passed create, page reload, edit, reload, remove and undo
+against MongoDB Atlas. An HTTP regression check verified schema rejection and
+HTTP 409 for an outdated edit. Production checks passed create, reload, edit
+and recoverable removal. The production health endpoint returned connected
+without Vercel authentication. At 390px, page width matched viewport width.
+
+A first local preview exposed a URL-encoded directory path caused by spaces
+in the project folder. fileURLToPath now resolves that path for Express static
+serving. Form checks also exposed that nested error text changed field names.
+Explicit field labels now keep those names stable while aria-describedby
+connects help and error messages. Both issues were corrected during verification.
+
+The deployed app uses Vercel. This retains the Express/Mongoose/Atlas model
+from the course while adapting the function entry point to the user's existing
+hosting account. The Netlify adapter is also retained as a course comparison.
+
+A credential was accidentally pasted into a Figma slide while transferring a
+screenshot via the system clipboard. The text node was immediately removed,
+and source files and slide text were scanned for connection strings. Credential
+rotation is required because file history may retain the removed value.

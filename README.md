@@ -38,3 +38,21 @@ of linked works. URLs always lead to original sources.
 Architecture follows Harold Sikkema's course examples. Implementation and
 process drafts were authored with Codex under the student's direction.
 See docs/PROCESS.md for sources and decisions.
+
+## Project links
+
+- Live app: https://margin-reference-library.vercel.app
+- Source: https://github.com/tymercury/margin-reference-library
+- Documentation: https://www.figma.com/slides/nXw7QJEAs21yng712GAOec
+
+Production uses Vercel with the Express adapter in api/index.js. The checked-in
+vercel.json routes /api requests to that function and serves public/ assets.
+MONGODB_URI is a server-side Production environment variable.
+
+## Verified behavior
+
+On November 25, 2026, browser checks against Atlas passed for create, reload,
+edit, reload, remove and undo. Production checks passed create, reload, edit
+and removal through the deployed API. A 390px viewport had no horizontal
+page overflow. Schema and HTTP checks covered invalid data and stale edits.
+The eight visible reference notes are AI-authored demonstration content.
